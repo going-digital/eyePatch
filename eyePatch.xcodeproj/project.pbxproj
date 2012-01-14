@@ -1,0 +1,254 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D216BA014C1CB84006939BC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D216B9F14C1CB84006939BC /* CoreFoundation.framework */; };
+		6D216BA614C1CB85006939BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D216BA414C1CB85006939BC /* InfoPlist.strings */; };
+		6D216BAF14C1CBE2006939BC /* eyePatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D216BAE14C1CBE2006939BC /* eyePatch.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6D216B9C14C1CB84006939BC /* eyePatch.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eyePatch.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D216B9F14C1CB84006939BC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		6D216BA314C1CB85006939BC /* eyePatch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eyePatch-Info.plist"; sourceTree = "<group>"; };
+		6D216BA514C1CB85006939BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D216BA714C1CB85006939BC /* eyePatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eyePatch-Prefix.pch"; sourceTree = "<group>"; };
+		6D216BAD14C1CBCA006939BC /* EyeTVPluginDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTVPluginDefs.h; sourceTree = "<group>"; };
+		6D216BAE14C1CBE2006939BC /* eyePatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = eyePatch.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D216B9914C1CB84006939BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D216BA014C1CB84006939BC /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D216B9114C1CB83006939BC = {
+			isa = PBXGroup;
+			children = (
+				6D216BA114C1CB84006939BC /* eyePatch */,
+				6D216B9E14C1CB84006939BC /* Frameworks */,
+				6D216B9D14C1CB84006939BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D216B9D14C1CB84006939BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D216B9C14C1CB84006939BC /* eyePatch.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D216B9E14C1CB84006939BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D216B9F14C1CB84006939BC /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D216BA114C1CB84006939BC /* eyePatch */ = {
+			isa = PBXGroup;
+			children = (
+				6D216BA214C1CB84006939BC /* Supporting Files */,
+				6D216BAE14C1CBE2006939BC /* eyePatch.c */,
+			);
+			path = eyePatch;
+			sourceTree = "<group>";
+		};
+		6D216BA214C1CB84006939BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D216BAD14C1CBCA006939BC /* EyeTVPluginDefs.h */,
+				6D216BA314C1CB85006939BC /* eyePatch-Info.plist */,
+				6D216BA414C1CB85006939BC /* InfoPlist.strings */,
+				6D216BA714C1CB85006939BC /* eyePatch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D216B9B14C1CB84006939BC /* eyePatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D216BAA14C1CB85006939BC /* Build configuration list for PBXNativeTarget "eyePatch" */;
+			buildPhases = (
+				6D216B9814C1CB84006939BC /* Sources */,
+				6D216B9914C1CB84006939BC /* Frameworks */,
+				6D216B9A14C1CB84006939BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eyePatch;
+			productName = eyePatch;
+			productReference = 6D216B9C14C1CB84006939BC /* eyePatch.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D216B9314C1CB84006939BC /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 6D216B9614C1CB84006939BC /* Build configuration list for PBXProject "eyePatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6D216B9114C1CB83006939BC;
+			productRefGroup = 6D216B9D14C1CB84006939BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D216B9B14C1CB84006939BC /* eyePatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D216B9A14C1CB84006939BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D216BA614C1CB85006939BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D216B9814C1CB84006939BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D216BAF14C1CBE2006939BC /* eyePatch.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6D216BA414C1CB85006939BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D216BA514C1CB85006939BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D216BA814C1CB85006939BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6D216BA914C1CB85006939BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6D216BAB14C1CB85006939BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eyePatch/eyePatch-Prefix.pch";
+				INFOPLIST_FILE = "eyePatch/eyePatch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		6D216BAC14C1CB85006939BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eyePatch/eyePatch-Prefix.pch";
+				INFOPLIST_FILE = "eyePatch/eyePatch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D216B9614C1CB84006939BC /* Build configuration list for PBXProject "eyePatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D216BA814C1CB85006939BC /* Debug */,
+				6D216BA914C1CB85006939BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D216BAA14C1CB85006939BC /* Build configuration list for PBXNativeTarget "eyePatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D216BAB14C1CB85006939BC /* Debug */,
+				6D216BAC14C1CB85006939BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D216B9314C1CB84006939BC /* Project object */;
+}
