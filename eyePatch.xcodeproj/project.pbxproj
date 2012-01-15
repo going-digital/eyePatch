@@ -247,6 +247,7 @@
 				6D216BAC14C1CB85006939BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

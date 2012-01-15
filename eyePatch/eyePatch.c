@@ -71,6 +71,7 @@ static long EyePatchInitialize(EyePatchGlobals** globals, long apiVersion, EyeTV
     long result = 0;
     *globals = (EyePatchGlobals*)calloc(1,sizeof(EyePatchGlobals));
     (*globals)->callback = callback;
+    printf("eyePatch is initialised\n");
     return result;
 }
 
@@ -176,7 +177,11 @@ static long EyePatchPmtPatch(uint8_t* packet) {
     int recalc_crc = 0;
     
     /* Validate and traverse packet header */
-    
+
+    /* debug - dump packet */
+    //printf("Start: ");
+    //for (i=0; i<188; i++) printf("%02x ",packet[i]); printf("\n");
+
     if (packet[0] != 0x47) return -1;               /* Verify sync byte */
     table = packet + 5 + packet[4];                 /* Traverse packet to table */
     if (table[0] != 0x02) return -2;                /* Verify table is a Program Map Table */
@@ -229,14 +234,16 @@ static long EyePatchPmtPatch(uint8_t* packet) {
             i+=length;
         }
         
-        /* Check for corrupt stresm descriptors */
+        /* Check for corrupt stream descriptors */
         if (stream_type == 0x06) {
             /* Private stream of PES packets? Lets guess the type */
             if (pid == pcrPid) {
                 /* Assume the PCR PID is video */
+                //printf("PID 0x%04x is hidden video\n",pid);
                 *stream_type_addr = 0x02;
                 recalc_crc = 1;
             } else if (is_audio) {
+                //printf("PID 0x%04x is hidden audio\n",pid);
                 *stream_type_addr = 0x03;
                 recalc_crc = 1;
             }
@@ -246,12 +253,16 @@ static long EyePatchPmtPatch(uint8_t* packet) {
         /* We've corrupted the PMT - now need to fix up the CRC */
         uint32_t crc;
         crc = crc32(table, tableLength-1);
-        table[tableLength] = (crc>>24) & 0xff;
+        table[tableLength-1] = (crc>>24) & 0xff;
         table[tableLength] = (crc>>16) & 0xff;
-        table[tableLength] = (crc>>8) & 0xff;
-        table[tableLength] = (crc) & 0xff;
+        table[tableLength+1] = (crc>>8) & 0xff;
+        table[tableLength+2] = (crc) & 0xff;
         
     }
+    /* debug - dump packet */
+    //printf("End: ");
+    //for (i=0; i<188; i++) printf("%02x ",packet[i]); printf("\n");
+
     return 0;
 }
 
@@ -268,7 +279,7 @@ static long EyePatchPacketsArrived(EyePatchGlobals *globals, EyeTVPluginDeviceID
                 for (i=0; i<packetsCount; i++) {
                     int packetPid;
                     packet = (uint8_t*)packets[i];
-                    packetPid = (packet[1]<<8) | packet[2];
+                    packetPid = ((packet[1]<<8) | packet[2]) & 0x1fff;
                     if (packetPid == globals->pmtPid) {
                         EyePatchPmtPatch(packet);
                     }
@@ -297,6 +308,7 @@ static long EyePatchServiceChanged( EyePatchGlobals *globals, EyeTVPluginDeviceI
                 if (pidList[i].pidType == kEyeTVPIDType_PMT) {
                     // Discover active Program Map Table PID
                     globals->pmtPid = pidList[i].pid;
+                    //printf("Monitoring PMT on PID %04lx\n",pidList[i].pid);
                 }
 			}
             deviceInfo->pidsCount = 0;
