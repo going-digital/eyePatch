@@ -1,0 +1,12 @@
+*eyePatch*
+
+*What it does*
+Some channels on digital TV are accessed through 'red button' captions. EyeTV doesn't support MHEG, so these channels can't be accessed at all. eyePatch makes these channels viewable through EyeTV.
+
+*How to install*
+Copy eyePatch.bundle to /Library/Application Support/EyeTV/plugins . (You might need to make a new Plugins folder first). Then restart EyeTV.
+
+*How it works*
+Channels are sent to the receiver over a series of channels. In an obscured channel, the video and audio streams are mislabelled as 'private'. Pushing the red button triggers the MHEG software to relabel them correctly, so the channel can be watched. At no stage is any stream encrypted.
+
+eyePatch works by using some simple heuristics to guess which private stream is video, and which is audio. It doesn't need any channel specific data. It neither contains or requires any channel specific information, access codes or PID numbers.
